@@ -1,0 +1,3 @@
+if [ "$CI" != "true" ]; then
+  pnpm dlx commitlint --edit "$1"
+fi
