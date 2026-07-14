@@ -14,7 +14,7 @@ services:
     restart: unless-stopped
     shm_size: 128mb
   keycloak:
-    image: dhi.io/keycloak:26-dev
+    image: keycloak/keycloak:26.7
     container_name: nido-keycloak
     environment:
       KC_BOOTSTRAP_ADMIN_USERNAME: admin
