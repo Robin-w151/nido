@@ -1,12 +1,16 @@
+import { signOut as remoteSignOut } from '$lib/auth/auth.remote';
 import { createAuthClient } from 'better-auth/client';
 import { genericOAuthClient } from 'better-auth/client/plugins';
-import { signOut as remoteSignOut } from '$lib/auth/client/auth.remote';
 
-export const authClient = createAuthClient({
+const authClient = createAuthClient({
   plugins: [genericOAuthClient()],
 });
 
-export async function signOut(): Promise<void> {
+export function signIn() {
+  return authClient.signIn.oauth2({ providerId: 'keycloak', callbackURL: '/' });
+}
+
+export async function signOut() {
   await authClient.signOut();
   const { signOutUrl } = await remoteSignOut();
   globalThis.location.href = signOutUrl;

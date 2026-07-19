@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { signOut } from '$lib/auth/client/auth';
-  import { checkLoggedIn } from '$lib/auth/client/auth.remote';
+  import { signOut } from '$lib/auth/auth.client';
+  import { checkLoggedIn } from '$lib/auth/auth.remote';
 
   const checkLoggedInQuery = checkLoggedIn();
 

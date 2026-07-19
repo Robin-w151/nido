@@ -1,10 +1,10 @@
 <script lang="ts">
-  import { authClient } from '$lib/auth/client/auth';
+  import { signIn } from '$lib/auth/auth.client';
 
   let errorMessage = $state<string | undefined>(undefined);
 
   async function handleSignIn(): Promise<void> {
-    const response = await authClient.signIn.oauth2({ providerId: 'keycloak', callbackURL: '/' });
+    const response = await signIn();
     if ('error' in response) {
       errorMessage = response.error?.message;
     }
