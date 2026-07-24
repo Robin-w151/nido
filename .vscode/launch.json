@@ -7,11 +7,15 @@
       "request": "launch",
       "cwd": "${workspaceFolder}/apps/web",
       "runtimeExecutable": "pnpm",
-      "runtimeArgs": ["dev"],
-      "runtimeVersion": "24.15.0",
-      "env": {
-        "NODE_OPTIONS": "--experimental-require-module"
-      }
+      "runtimeArgs": ["dev"]
+    },
+    {
+      "name": "DB Studio",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/apps/web",
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["db:studio"]
     }
   ]
 }
