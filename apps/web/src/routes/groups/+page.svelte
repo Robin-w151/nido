@@ -38,6 +38,10 @@
         </td>
         <td>{group.members}</td>
       </tr>
+    {:else}
+      <tr>
+        <td colspan="2">You are currently in no group.</td>
+      </tr>
     {/each}
   </tbody>
 </table>
